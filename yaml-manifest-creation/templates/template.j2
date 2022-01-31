@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ name }}
+  labels:
+    app: {{ name }}
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: {{ name }}
+
+  template:
+    metadata:
+      labels:
+        app: {{ name }}
+    spec:
+      containers:
+      - image: nexus-repo.cnfi.stratus.int.bell.ca/ubuntu:20.04
+        name: {{ name }}
+        volumeMounts:
+        - mountPath: /sys
+          name: src
+        - mountPath: /src
+          name: src-1
+        args:
+        - -c
+        - sleep 8640000
+        command:
+        - sh
+        resources:
+          limits:
+            cpu: "100m"
+            memory: "1Gi"
+      nodeSelector:
+        kubernetes.io/hostname: {{ nodeName }}
+      volumes:
+      - name: src
+        persistentVolumeClaim:
+          claimName: {{ claimName1 }}
+          readOnly: true
+      - name: src-1
+        persistentVolumeClaim:
+          claimName: {{ claimName2 }}
+          readOnly: true

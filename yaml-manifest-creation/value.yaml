@@ -1,0 +1,9 @@
+deployments:
+- name: rsync
+  nodeName: toroon63ivg
+  claimName1: test-dev-1
+  claimName2: test-dev-2
+- name: rsync-2
+  nodeName: toroon63ivh
+  claimName1: test-dev-3
+  claimName2: test-dev-4
