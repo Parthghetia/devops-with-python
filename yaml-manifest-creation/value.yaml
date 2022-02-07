@@ -2,7 +2,7 @@
 # for n in `oc get nodes | awk '{if ($1 !~ /NAME/)print $1;}'`;  do    sed -i "s/nodeName =.*/nodeName =test/g" test.yaml  ; donefor n in `oc get nodes | awk '{if ($1 !~ /NAME/)print $1;}'`;  
 # do    
 #   sed -i "s/nodeName =.*/nodeName =test/g" test.yaml  ;
-# done
+# done (not working)
 
 deployments:
 - name: rsync
