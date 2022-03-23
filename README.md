@@ -100,3 +100,24 @@ The count is 4
 The count is 5
 The count is 6
 ```
+## Handling Exceptions
+This is our try to catch an error in our code and not allow our program to crash but print a friendly output to show what's up really. Here is a perfect example
+```python
+"""
+requirement: create a list of people whom you think of the greatest thinkers of all time
+pop the one that you think is the least greatest of all time
+make sure to create a try block to catch an exception if your list of thinkers end
+"""
+
+thinkers = ['Parth', 'Einstein', 'Maria']
+
+while True:
+    try:
+        thinker = thinkers.pop()
+        print(thinker)
+    except IndexError as e:
+        print ("I think we are out of great thinkers unfortunately")
+        print (e)
+        break
+```
+
