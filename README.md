@@ -120,4 +120,134 @@ while True:
         print (e)
         break
 ```
+## Objects and classes in Python
+
+```
+>>> class fancyCar():
+...     wheels = 4
+... 
+# Instantiate a fancy car
+>>> my_car=fancyCar()
+# Access the class attribute
+>>> my_car.wheels
+4   
+>>> class fancyCar():
+...     def driveFast(self):
+...             print("Driving so fast")
+... 
+>>> my_car=fancyCar()
+# Invoke the method
+>>> my_car.driveFast()
+Driving so fast
+```
+driveFast is a method and wheels is an attribute of our class
+
+## Sequences
+- These include: list, tuple, range, string, binary types
+- Sequences represents ordered and finite collection of items
+
+### Sequence operations
+
+```
+>>> 2 in [1,2,3]
+True
+>>> 'a' not in 'cat'
+False
+>>> 10 in range(12)
+True
+>>> 10 not in range(2, 4)
+True
+```
+
+You can always reference the contents of a sequence using its index number like below (notice -1 starts from behind):
+```
+>>> my_sequence = 'Bill Cheatham'
+>>> my_sequence[0]
+'B'
+>>> my_sequence[2]
+'l'
+>>> my_sequence[12]
+'m'
+>>> my_sequence = "Bill Cheatham"
+>>> my_sequence[–1]
+'m'
+>>> my_sequence.index('a')
+8
+>>
+```
+
+#### Use of slicing in sequences
+You can produce a new sequence from another sequence using slicing. A slice appears by invoking a sequence with brackets containing optional start, stop and step arguments
+
+my_sequence[start:stop:step]
+
+Let's do this
+```
+>>> my_sequence = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+>>> my_sequence[2:5]
+['c', 'd', 'e']
+>>> my_sequence[:5]
+['a', 'b', 'c', 'd', 'e']
+>>> my_sequence[3:]
+['d', 'e', 'f', 'g']
+```
+
+Sequences share many operations for getting information about them and their contents:
+```
+>>> my_sequence = [0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 4]
+>>> len(my_sequence)
+12
+>>> min(my_sequence)
+0
+>>> max(my_sequence)
+4
+>>> my_sequence.count(1)
+3
+```
+## Lists
+```
+>>> list()
+[]
+>>> list (range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> list('Henry Miller')
+['H', 'e', 'n', 'r', 'y', ' ', 'M', 'i', 'l', 'l', 'e', 'r']
+```
+Always remember lists could house lists like below
+```
+>>> empty=[]
+>>> another_list=['Hello', 9 , empty]  
+>>> another_list
+['Hello', 9, []]
+```
+The best way to add items to a list is to append them
+```
+>>> devops = ['K8s', 'Git']
+>>> devops.append('openshift')
+>>> devops
+['K8s', 'Git', 'openshift']
+```
+Contents of one list can be added to another using extend like so:
+```
+>>> devops = ['K8s', 'Git']
+>>> devops.append('openshift')
+>>> devops
+['K8s', 'Git', 'openshift']
+>>> k8s = ['services', 'pods']
+>>> k8s.extend(devops)
+>>> k8s
+['services', 'pods', 'K8s', 'Git', 'openshift']
+>>>
+```
+The best way to remove the last item is to pop
+```
+>>> k8s
+['services', 'pods', 'K8s', 'Git', 'openshift']
+>>> k8s.pop()
+'openshift'
+>>> k8s    
+['services', 'pods', 'K8s', 'Git']
+>>>
+```
+
 
