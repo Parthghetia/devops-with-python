@@ -239,7 +239,7 @@ Contents of one list can be added to another using extend like so:
 ['services', 'pods', 'K8s', 'Git', 'openshift']
 >>>
 ```
-The best way to remove the last item is to pop
+The best way to remove the last item is to pop. You could use index number to kill the right item in the list
 ```
 >>> k8s
 ['services', 'pods', 'K8s', 'Git', 'openshift']
@@ -249,5 +249,15 @@ The best way to remove the last item is to pop
 ['services', 'pods', 'K8s', 'Git']
 >>>
 ```
+The .remove method can also be used to remove the first occurrence of the item like so:
+```
+>>> k8s    
+['services', 'pods', 'K8s', 'Git']
+>>> k8s.remove('pods') 
+>>> k8s
+['services', 'K8s', 'Git']
+>>>
+```
+
 
 
