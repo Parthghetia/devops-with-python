@@ -260,4 +260,97 @@ The .remove method can also be used to remove the first occurrence of the item l
 ```
 
 
+## Using a for loop within a list to simplify and clean code:
 
+```
+>>> squares=[]
+>>> for i in range(10):
+...     squared=i*i
+...     squares.append(squared)
+... 
+>>> squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+Take a look at this code and how this can be simplified as shown below:
+```
+>>> squares = [i*i for i in range(10)]
+>>> squares
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+```
+Note that the functionality of the inner block is put first, followed by the for statement. You can also add conditionals to list comprehensions like below:
+```
+>>> squares=[i*i for i in range(10) if i%2==0]
+>>> squares
+[0, 4, 16, 36, 64]
+```
+## Strings
+String constructor can be used to make strings of other objects like lists as shown below:
+```
+>>> my_list = list()
+>>> str(my_list)
+'[]'
+```
+
+It is relatively common for user text to have trailing or leading whitespace. If someone types " yes " in a form instead of “yes” you usually want to treat them the same. Python strings have a strip method just for this case
+```
+>>> input = "  I want more  "
+>>> input.strip()
+'I want more'
+>>> input.rstrip()
+'  I want more'
+>>> input.lstrip()
+'I want more  '
+```
+
+On the other hand, if you want to add padding to a string, you can use the ljust or rjust methods. Either one pads with whitespace by default, or takes a character argument:
+```
+>>> output = 'Barry'
+>>> output.ljust(10)
+'Barry     '
+>>> output.rjust(10, '*')
+'*****Barry'
+ ```
+ 
+ ## Splitting strings
+ Let's just say you wanna "split" a sentence into words. Use this. Here we goo:
+```
+>>> text = "Mary had a little lamb"
+>>> text.split()
+['Mary', 'had', 'a', 'little', 'lamb']
+>>> url = "gt.motomomo.io/v2/api/asset/143"
+>>> url.split('/')
+['gt.motomomo.io', 'v2', 'api', 'asset', '143']
+```
+
+## Joining strings
+
+You can easily create a new string from a sequence of strings and join
+them into a single string. This method inserts a string as a separator
+between a list of other strings:
+```
+>>> items = ['cow', 'milk', 'bread', 'butter']
+>>> " and ".join(items)
+'cow and milk and bread and butter'
+```
+There are other methods to capitalize and lower case a string. Those are easily available on google dude. Not gonna cover those
+Here are some commonly used python methods
+```
+>>> "William".startswith('W')
+True
+>>> "William".startswith('Bill')
+False
+>>> "Molly".endswith('olly')
+True
+>>> "abc123".isalnum()
+True
+>>> "abc123".isalpha()
+False
+>>> "abc".isalnum()
+True
+>>> "123".isnumeric()
+True
+>>> "Sandy".istitle()
+True
+>>> "Sandy".islower()
+False
+```
