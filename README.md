@@ -354,3 +354,31 @@ True
 >>> "Sandy".islower()
 False
 ```
+## Formatting strings in Python
+
+Using curly brackets in the string to indicate replacement fields like so:
+```
+>>> '{} come before {}'.format('first','second')
+'first come before second'
+```
+
+You can specify index numbers in the brackets to insert values in a different order as desired. Which allows you to repeat a value as well. Like so:
+```
+'{1} comes after two but {0} does not come after two'.format('one','three') 
+'three comes after two but one does not come after two'
+```
+An even more powerful feature is that the insert values can be specified by a name or a key like so:
+```
+'{country} is an island {country} is off the coast of {continent} in the {ocean}'.format(country='Madagascar', continent='Africa', ocean='Indian Ocean')
+'Madagascar is an island Madagascar is off the coast of Africa in the Indian Ocean'
+```
+You can also use a dictionary to replace the values in a string like so:
+```
+>>> values={'firstName':'Bill', 'lastName':'Cosby'} 
+>>> "Won\'t you come to school {firstName} {lastName}".format(**values) 
+"Won't you come to school Bill Cosby"
+```
+
+
+'
+
