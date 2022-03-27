@@ -379,6 +379,18 @@ You can also use a dictionary to replace the values in a string like so:
 "Won't you come to school Bill Cosby"
 ```
 
-You can also specify format 
-'
+You can also specify format specification arguments. Here below we will add left and right padding using < and >
 
+```python
+>>> text="{0:>22}||{0:<22}"
+>>> text.format('P','P') 
+'                     P||P                     '
+>>> text="{0:<>22}||{0:><22}"
+>>> text.format('Q','Q') 
+'<<<<<<<<<<<<<<<<<<<<<Q||Q>>>>>>>>>>>>>>>>>>>>>'
+```
+
+### F-strings in Python
+These are more straightforward compare to the format method. f-strings are prepended with either f or F before the first quotation mark. 
+- f-strings use curly braces to mark the replacement fields. In an f-string however, the content of the replacement field is an expression.
+- This approach could mean you could even do some sort of calculations. let's see below:
