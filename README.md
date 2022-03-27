@@ -1,6 +1,6 @@
 ## Range
 
-```
+```python
 >>> range(10)
 range(0, 10)
 >>> list(range(10))
@@ -13,7 +13,7 @@ range(0, 10)
 
 ## if elif else
 
-```
+```python
 >>> if i == 45:
 ...     print('i is 45')
 ... elif i == 35:
@@ -41,7 +41,7 @@ some other cat
 
 For loops and breaking a for loop with continue
 
-```
+```python
 >>> for i in range(10):
 ...      x=i*2
 ...      print (x)
@@ -58,7 +58,7 @@ For loops and breaking a for loop with continue
 18
 ```
 Continue
-```
+```python
 >>> for i in range(6):
 ...      if i == 3:
 ...           continue 
@@ -73,7 +73,7 @@ Continue
 
 ## While loops
 This repeat a block as long as a condition evaluates to true
-```
+```python
 >>> while count < 3:
 ...     print(f"count is {count}")
 ...     count +=1
@@ -84,7 +84,7 @@ count is 2
 ```
 
 It is essential to define a way to stop your loop. Otherwise it would be stuck. You could use a break statement to prevent this like so
-```
+```python
 >>> count = 0
 >>> while True:
 ...       print(f"The count is {count}")
@@ -122,7 +122,7 @@ while True:
 ```
 ## Objects and classes in Python
 
-```
+```python
 >>> class fancyCar():
 ...     wheels = 4
 ... 
@@ -148,7 +148,7 @@ driveFast is a method and wheels is an attribute of our class
 
 ### Sequence operations
 
-```
+```python
 >>> 2 in [1,2,3]
 True
 >>> 'a' not in 'cat'
@@ -160,7 +160,7 @@ True
 ```
 
 You can always reference the contents of a sequence using its index number like below (notice -1 starts from behind):
-```
+```python
 >>> my_sequence = 'Bill Cheatham'
 >>> my_sequence[0]
 'B'
@@ -182,7 +182,7 @@ You can produce a new sequence from another sequence using slicing. A slice appe
 my_sequence[start:stop:step]
 
 Let's do this
-```
+```python
 >>> my_sequence = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
 >>> my_sequence[2:5]
 ['c', 'd', 'e']
@@ -193,7 +193,7 @@ Let's do this
 ```
 
 Sequences share many operations for getting information about them and their contents:
-```
+```python
 >>> my_sequence = [0, 1, 2, 0, 1, 2, 3, 0, 1, 2, 3, 4]
 >>> len(my_sequence)
 12
@@ -205,7 +205,7 @@ Sequences share many operations for getting information about them and their con
 3
 ```
 ## Lists
-```
+```python
 >>> list()
 []
 >>> list (range(10))
@@ -221,14 +221,14 @@ Always remember lists could house lists like below
 ['Hello', 9, []]
 ```
 The best way to add items to a list is to append them
-```
+```python
 >>> devops = ['K8s', 'Git']
 >>> devops.append('openshift')
 >>> devops
 ['K8s', 'Git', 'openshift']
 ```
 Contents of one list can be added to another using extend like so:
-```
+```python
 >>> devops = ['K8s', 'Git']
 >>> devops.append('openshift')
 >>> devops
@@ -240,7 +240,7 @@ Contents of one list can be added to another using extend like so:
 >>>
 ```
 The best way to remove the last item is to pop. You could use index number to kill the right item in the list
-```
+```python
 >>> k8s
 ['services', 'pods', 'K8s', 'Git', 'openshift']
 >>> k8s.pop()
@@ -250,7 +250,7 @@ The best way to remove the last item is to pop. You could use index number to ki
 >>>
 ```
 The .remove method can also be used to remove the first occurrence of the item like so:
-```
+```python
 >>> k8s    
 ['services', 'pods', 'K8s', 'Git']
 >>> k8s.remove('pods') 
@@ -262,7 +262,7 @@ The .remove method can also be used to remove the first occurrence of the item l
 
 ## Using a for loop within a list to simplify and clean code:
 
-```
+```python
 >>> squares=[]
 >>> for i in range(10):
 ...     squared=i*i
@@ -272,27 +272,27 @@ The .remove method can also be used to remove the first occurrence of the item l
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 Take a look at this code and how this can be simplified as shown below:
-```
+```python
 >>> squares = [i*i for i in range(10)]
 >>> squares
 [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 ```
 Note that the functionality of the inner block is put first, followed by the for statement. You can also add conditionals to list comprehensions like below:
-```
+```python
 >>> squares=[i*i for i in range(10) if i%2==0]
 >>> squares
 [0, 4, 16, 36, 64]
 ```
 ## Strings
 String constructor can be used to make strings of other objects like lists as shown below:
-```
+```python
 >>> my_list = list()
 >>> str(my_list)
 '[]'
 ```
 
 It is relatively common for user text to have trailing or leading whitespace. If someone types " yes " in a form instead of “yes” you usually want to treat them the same. Python strings have a strip method just for this case
-```
+```python
 >>> input = "  I want more  "
 >>> input.strip()
 'I want more'
@@ -303,7 +303,7 @@ It is relatively common for user text to have trailing or leading whitespace. If
 ```
 
 On the other hand, if you want to add padding to a string, you can use the ljust or rjust methods. Either one pads with whitespace by default, or takes a character argument:
-```
+```python
 >>> output = 'Barry'
 >>> output.ljust(10)
 'Barry     '
@@ -313,7 +313,7 @@ On the other hand, if you want to add padding to a string, you can use the ljust
  
  ## Splitting strings
  Let's just say you wanna "split" a sentence into words. Use this. Here we goo:
-```
+```python
 >>> text = "Mary had a little lamb"
 >>> text.split()
 ['Mary', 'had', 'a', 'little', 'lamb']
@@ -327,14 +327,14 @@ On the other hand, if you want to add padding to a string, you can use the ljust
 You can easily create a new string from a sequence of strings and join
 them into a single string. This method inserts a string as a separator
 between a list of other strings:
-```
+```python
 >>> items = ['cow', 'milk', 'bread', 'butter']
 >>> " and ".join(items)
 'cow and milk and bread and butter'
 ```
 There are other methods to capitalize and lower case a string. Those are easily available on google dude. Not gonna cover those
 Here are some commonly used python methods
-```
+```python
 >>> "William".startswith('W')
 True
 >>> "William".startswith('Bill')
@@ -357,18 +357,18 @@ False
 ## Formatting strings in Python
 
 Using curly brackets in the string to indicate replacement fields like so:
-```
+```python
 >>> '{} come before {}'.format('first','second')
 'first come before second'
 ```
 
 You can specify index numbers in the brackets to insert values in a different order as desired. Which allows you to repeat a value as well. Like so:
-```
+```python
 '{1} comes after two but {0} does not come after two'.format('one','three') 
 'three comes after two but one does not come after two'
 ```
 An even more powerful feature is that the insert values can be specified by a name or a key like so:
-```
+```python
 '{country} is an island {country} is off the coast of {continent} in the {ocean}'.format(country='Madagascar', continent='Africa', ocean='Indian Ocean')
 'Madagascar is an island Madagascar is off the coast of Africa in the Indian Ocean'
 ```
