@@ -373,12 +373,12 @@ An even more powerful feature is that the insert values can be specified by a na
 'Madagascar is an island Madagascar is off the coast of Africa in the Indian Ocean'
 ```
 You can also use a dictionary to replace the values in a string like so:
-```
+```python
 >>> values={'firstName':'Bill', 'lastName':'Cosby'} 
 >>> "Won\'t you come to school {firstName} {lastName}".format(**values) 
 "Won't you come to school Bill Cosby"
 ```
 
-
+You can also specify format 
 '
 
